@@ -1,0 +1,21 @@
+body{
+    background-size: cover;
+    }
+    #oso{
+        background-color: rgb(120, 95, 248);
+        color: white;
+        border-radius: 50px;
+    }
+    canvas{
+        animation-name: mouse;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    
+    }@keyframes mouse{
+        from{
+            box-shadow: 0px 0px 45px white;
+        }
+        to{
+            box-shadow: 0px 0px 45px rgb(98, 98, 230);
+        }
+    }
