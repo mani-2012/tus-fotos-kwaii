@@ -1,27 +1,34 @@
 X=0;
 Y=0;
-function preload(){}
+function preload(){
+ imagen=loadImage('https://i.postimg.cc/X7p3V0sK/dalmata2.png');
+}
 function draw(){
-image(camara,0,0,260,260);
+image(camara,0,0,300,300);
+image(imagen,X,Y,120,120);
 }
 function setup(){
-    feliz=createCanvas(260,260);
-    feliz.center();
+    moño=createCanvas(300,300);
+    moño.center();
     camara=createCapture(VIDEO);
-    camara.size(260,260);
+    camara.size(300,300);
     camara.hide();
-    casa=ml5.poseNet(camara,perrito);
-    casa.on('rostro',blondie);
+    arbol=ml5.poseNet(camara,regalo);
+    arbol.on('pose',resultado);
 }
-function perrito(){
-    console.log("Ya esta listo el modelo. :)");
+function regalo(){
+    console.log("el modelo esta listo. :)");
 }
-function blondie(posole){
-    if (posole.length>0) {
-        console.log(posole);
-        X=posole[0].rostro.nose.x;
-        Y=posole[0].rostro.nose.y;
+function resultado(reno){
+    if (reno.length>0) {
+        console.log(reno);
+        X=reno[0].pose.nose.x-55;
+        Y=reno[0].pose.nose.y-96;
 
     }
    
+}
+function panda(){
+save('Tu Foto De Perrito.png');
+
 }
